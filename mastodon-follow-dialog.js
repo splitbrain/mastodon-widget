@@ -45,7 +45,7 @@ class MastodonFollowDialog extends HTMLElement {
 
     connectedCallback() {
         this.#root.querySelector('h1 span').textContent = this.getAttribute('account');
-
+        this.#input.value = localStorage.getItem('mastodon-instance') || '';
     }
 
     getStyle() {
@@ -168,8 +168,11 @@ class MastodonFollowDialog extends HTMLElement {
 
     submit() {
         const domain = this.#input.value;
+        if(!domain) return;
+        localStorage.setItem('mastodon-instance', domain);
         const account = this.getAttribute('account');
-        const url = `https://${domain}/@${account}`;
+        // FIXME the correct way is to use webfinger to find the appropriate endpoint and to use a acct uri
+        const url = `https://${domain}/authorize_interaction?uri=@${account}`;
         this.#dialog.close();
         window.open(url, '_blank');
     }
