@@ -118,6 +118,7 @@ class MastodonWidget extends HTMLElement {
             }
             
             .meta > div {
+                height: 2em;
                 flex: 1;
                 display: flex;
                 flex-direction: column;
