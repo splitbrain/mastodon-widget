@@ -1,6 +1,6 @@
 {
   "name": "mastodon-widget",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Mastodon Widgets as Web Components",
   "author": {
     "name": "Andreas Gohr",
@@ -31,10 +31,8 @@
     "generate": "stencil generate",
     "pretty": "prettier . --write"
   },
-  "dependencies": {
-    "@stencil/core": "^4.7.0"
-  },
   "devDependencies": {
+    "@stencil/core": "^4.7.0",
     "@types/jest": "^29.5.6",
     "@types/node": "^16.18.11",
     "jest": "^29.7.0",
