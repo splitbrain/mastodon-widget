@@ -1,7 +1,12 @@
 {
   "name": "mastodon-widget",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Mastodon Widgets as Web Components",
+  "author": {
+    "name": "Andreas Gohr",
+    "email": "andi@splitbrain.org",
+    "url": "https://splitbrain.org"
+  },
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.js",
@@ -12,7 +17,7 @@
   "unpkg": "dist/mastodon-widget/mastodon-widget.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/splitbrain/mastodon-widget.git"
   },
   "files": [
     "dist/",
