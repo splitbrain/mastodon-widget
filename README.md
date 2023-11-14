@@ -57,6 +57,15 @@ npm run pretty
 
 The project is published to npm as `mastodon-widget`. See the [npm page](https://www.npmjs.com/package/mastodon-widget) for more info.
 
+For building a new release, run:
+
+```bash
+npm version patch
+git push --tags
+```
+
+Replace `patch` with `minor` or `major` as needed. This will update the pakage version, create a git tag and push it to the repo. There a github action will build the package and publish it to npm.
+
 ## Help
 
 Please help with the open issues.
