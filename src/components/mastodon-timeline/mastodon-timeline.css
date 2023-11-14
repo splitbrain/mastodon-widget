@@ -1,8 +1,11 @@
 :host {
   display: block;
 
+  /** @prop --color-background: background color of the toots */
   --color-background: #ccd7e0;
+  /** @prop --color-text: text color used in the toots */
   --color-text: #282c37;
+  /** @prop --color-link: link color */
   --color-link: #6364ff;
 }
 

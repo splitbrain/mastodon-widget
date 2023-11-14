@@ -1,5 +1,8 @@
 import { Component, Host, h, State, Prop } from '@stencil/core';
 
+/**
+ * A widget to display a Mastodon account and its timeline.
+ */
 @Component({
   tag: 'mastodon-widget',
   styleUrl: 'mastodon-widget.css',
@@ -8,7 +11,9 @@ import { Component, Host, h, State, Prop } from '@stencil/core';
 export class MastodonWidget {
   root: HTMLDivElement;
 
+  /** The account to display in the form `user@example.com` */
   @Prop() account: string;
+  /** The number of toots to display. `0` for disabling the timeline */
   @Prop() limit: number = 10;
 
   @State() userdata = {

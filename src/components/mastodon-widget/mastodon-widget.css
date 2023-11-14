@@ -1,9 +1,15 @@
 :host {
+  /** @prop --color-background: background color of the widget */
   --color-background: #ccd7e0;
+  /** @prop --color-text: text color used in the widget */
   --color-text: #282c37;
+  /** @prop --color-link: link color */
   --color-link: #6364ff;
+  /** @prop --button-background: background color of the follow button */
   --button-background: #6364ff;
+  /** @prop --button-hover: background color of the follow button on hover */
   --button-hover: #4c4cff;
+  /** @prop --button-color: text color of the follow button */
   --button-color: #fff;
 }
 

@@ -1,5 +1,10 @@
 import { Component, h, Host, Prop, State } from '@stencil/core';
 
+/**
+ * A widget to display the timeline of a Mastodon account
+ *
+ * This makes use of the RSS feed of the account.
+ */
 @Component({
   tag: 'mastodon-timeline',
   styleUrl: 'mastodon-timeline.css',
@@ -7,7 +12,10 @@ import { Component, h, Host, Prop, State } from '@stencil/core';
 })
 export class MastodonTimeline {
   @State() items: Array<any> = [];
+
+  /** The account for which the timeline should be shown in the form `user@example.com` */
   @Prop() account: string;
+  /** The number of toots to display */
   @Prop() limit: number = 10;
 
   render() {

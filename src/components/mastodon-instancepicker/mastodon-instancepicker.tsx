@@ -1,5 +1,8 @@
 import { Component, h, Host, Method, Prop } from '@stencil/core';
 
+/**
+ * A dialog widget to let a user pick their Mastodon instance.
+ */
 @Component({
   tag: 'mastodon-instancepicker',
   styleUrl: 'mastodon-instancepicker.css',
@@ -12,6 +15,7 @@ export class MastodonInstancepicker {
   abortController: AbortController;
   instance: { resolve: (value: PromiseLike<string> | string) => void; reject: (reason?: any) => void };
 
+  /** currently unused */
   @Prop() account: string;
 
   render() {
@@ -45,6 +49,9 @@ export class MastodonInstancepicker {
     );
   }
 
+  /**
+   * Open the dialog and let the user pick an instance.
+   */
   @Method()
   async pickInstance() {
     this.dialog.showModal();
@@ -53,6 +60,9 @@ export class MastodonInstancepicker {
     });
   }
 
+  /**
+   * Close the dialog without picking an instance.
+   */
   @Method()
   async close() {
     this.dialog.close();

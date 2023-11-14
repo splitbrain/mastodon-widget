@@ -1,4 +1,10 @@
-# Mastodon Widget
+# Mastodon Widgets
+
+* [mastodon-widget](src/components/mastodon-widget/readme.md)
+* [mastodon-timeline](src/components/mastodon-timeline/readme.md)
+* [mastodon-instancepicker](src/components/mastodon-instancepicker/readme.md)
+
+
 
 ## Todo
 
@@ -13,3 +19,5 @@
 - [x] let dialog return the instance for reusability for share widget
 - [ ] add share widget
 - [ ] figure out build/dist process
+
+

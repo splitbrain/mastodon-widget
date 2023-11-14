@@ -6,33 +6,74 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    /**
+     * A dialog widget to let a user pick their Mastodon instance.
+     */
     interface MastodonInstancepicker {
+        /**
+          * currently unused
+         */
         "account": string;
+        /**
+          * Close the dialog without picking an instance.
+         */
         "close": () => Promise<void>;
+        /**
+          * Open the dialog and let the user pick an instance.
+         */
         "pickInstance": () => Promise<string>;
     }
+    /**
+     * A widget to display the timeline of a Mastodon account
+     * This makes use of the RSS feed of the account.
+     */
     interface MastodonTimeline {
+        /**
+          * The account for which the timeline should be shown in the form `user@example.com`
+         */
         "account": string;
+        /**
+          * The number of toots to display
+         */
         "limit": number;
     }
+    /**
+     * A widget to display a Mastodon account and its timeline.
+     */
     interface MastodonWidget {
+        /**
+          * The account to display in the form `user@example.com`
+         */
         "account": string;
+        /**
+          * The number of toots to display. `0` for disabling the timeline
+         */
         "limit": number;
     }
 }
 declare global {
+    /**
+     * A dialog widget to let a user pick their Mastodon instance.
+     */
     interface HTMLMastodonInstancepickerElement extends Components.MastodonInstancepicker, HTMLStencilElement {
     }
     var HTMLMastodonInstancepickerElement: {
         prototype: HTMLMastodonInstancepickerElement;
         new (): HTMLMastodonInstancepickerElement;
     };
+    /**
+     * A widget to display the timeline of a Mastodon account
+     * This makes use of the RSS feed of the account.
+     */
     interface HTMLMastodonTimelineElement extends Components.MastodonTimeline, HTMLStencilElement {
     }
     var HTMLMastodonTimelineElement: {
         prototype: HTMLMastodonTimelineElement;
         new (): HTMLMastodonTimelineElement;
     };
+    /**
+     * A widget to display a Mastodon account and its timeline.
+     */
     interface HTMLMastodonWidgetElement extends Components.MastodonWidget, HTMLStencilElement {
     }
     var HTMLMastodonWidgetElement: {
@@ -46,15 +87,40 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    /**
+     * A dialog widget to let a user pick their Mastodon instance.
+     */
     interface MastodonInstancepicker {
+        /**
+          * currently unused
+         */
         "account"?: string;
     }
+    /**
+     * A widget to display the timeline of a Mastodon account
+     * This makes use of the RSS feed of the account.
+     */
     interface MastodonTimeline {
+        /**
+          * The account for which the timeline should be shown in the form `user@example.com`
+         */
         "account"?: string;
+        /**
+          * The number of toots to display
+         */
         "limit"?: number;
     }
+    /**
+     * A widget to display a Mastodon account and its timeline.
+     */
     interface MastodonWidget {
+        /**
+          * The account to display in the form `user@example.com`
+         */
         "account"?: string;
+        /**
+          * The number of toots to display. `0` for disabling the timeline
+         */
         "limit"?: number;
     }
     interface IntrinsicElements {
@@ -67,8 +133,18 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            /**
+             * A dialog widget to let a user pick their Mastodon instance.
+             */
             "mastodon-instancepicker": LocalJSX.MastodonInstancepicker & JSXBase.HTMLAttributes<HTMLMastodonInstancepickerElement>;
+            /**
+             * A widget to display the timeline of a Mastodon account
+             * This makes use of the RSS feed of the account.
+             */
             "mastodon-timeline": LocalJSX.MastodonTimeline & JSXBase.HTMLAttributes<HTMLMastodonTimelineElement>;
+            /**
+             * A widget to display a Mastodon account and its timeline.
+             */
             "mastodon-widget": LocalJSX.MastodonWidget & JSXBase.HTMLAttributes<HTMLMastodonWidgetElement>;
         }
     }
