@@ -1,9 +1,6 @@
 # mastodon-instancepicker
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Overview
 
@@ -15,7 +12,6 @@ A dialog widget to let a user pick their Mastodon instance.
 | --------- | --------- | ---------------- | -------- | ----------- |
 | `account` | `account` | currently unused | `string` | `undefined` |
 
-
 ## Methods
 
 ### `close() => Promise<void>`
@@ -26,8 +22,6 @@ Close the dialog without picking an instance.
 
 Type: `Promise<void>`
 
-
-
 ### `pickInstance() => Promise<string>`
 
 Open the dialog and let the user pick an instance.
@@ -35,9 +29,6 @@ Open the dialog and let the user pick an instance.
 #### Returns
 
 Type: `Promise<string>`
-
-
-
 
 ## CSS Custom Properties
 
@@ -50,20 +41,20 @@ Type: `Promise<string>`
 | `--color-link`        | link color                                                                  |
 | `--color-text`        | text color used in the dialog                                               |
 
-
 ## Dependencies
 
 ### Used by
 
- - [mastodon-widget](../mastodon-widget)
+- [mastodon-widget](../mastodon-widget)
 
 ### Graph
+
 ```mermaid
 graph TD;
   mastodon-widget --> mastodon-instancepicker
   style mastodon-instancepicker fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

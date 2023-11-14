@@ -10,20 +10,20 @@ When a user clicks the follow button, a dialog will ask for their instance (incl
 
 ```html
 <html>
-<head>
-  <script src="https://unpkg.com/mastodon-widget"></script>
-</head>
-
-<mastodon-widget account="splitbrain@octodon.social" limit="5"></mastodon-widget>
-  
+  <head>
+    <script src="https://unpkg.com/mastodon-widget"></script>
+  </head>
+  <body>
+    <mastodon-widget account="splitbrain@octodon.social" limit="5"></mastodon-widget>
+  </body>
 </html>
 ```
 
 More info about the individual components can be found in their respective readme files:
 
-* [mastodon-widget](src/components/mastodon-widget/readme.md) The main widget as shown above
-* [mastodon-timeline](src/components/mastodon-timeline/readme.md) The timeline component
-* [mastodon-instancepicker](src/components/mastodon-instancepicker/readme.md) The instance picker dialog
+- [mastodon-widget](src/components/mastodon-widget/readme.md) The main widget as shown above
+- [mastodon-timeline](src/components/mastodon-timeline/readme.md) The timeline component
+- [mastodon-instancepicker](src/components/mastodon-instancepicker/readme.md) The instance picker dialog
 
 ## Development
 
@@ -62,5 +62,3 @@ The project is published to npm as `mastodon-widget`. See the [npm page](https:/
 Please help with the open issues.
 
 This is my first project using stenciljs and typescript, so I'm sure there is a lot of room for improvement. Pull requests are welcome.
-
-
