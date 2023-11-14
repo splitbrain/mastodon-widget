@@ -1,0 +1,83 @@
+:host {
+  --color-background: #ccd7e0;
+  --color-text: #282c37;
+  --color-link: #6364ff;
+  --button-background: #6364ff;
+  --button-hover: #4c4cff;
+  --button-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.root {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+main .avatar {
+  background-color: #eff3f5;
+  border: 2px solid #fff;
+  border-radius: 0.25em;
+  width: 5em;
+  height: 5em;
+}
+
+main .info .name {
+  font-size: 1.5em;
+}
+
+main a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+.meta {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 1em;
+  margin-top: 0.5em;
+}
+
+.meta > div {
+  height: 2em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.meta > div > span {
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+.meta button {
+  height: 100%;
+  border: none;
+  background-color: var(--button-background);
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 0.25em;
+}
+
+.meta button:hover {
+  background-color: var(--button-hover);
+}

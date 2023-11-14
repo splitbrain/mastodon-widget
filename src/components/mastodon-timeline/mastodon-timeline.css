@@ -1,0 +1,33 @@
+:host {
+  display: block;
+
+  --color-background: #ccd7e0;
+  --color-text: #282c37;
+  --color-link: #6364ff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.dt {
+  font-size: 0.8em;
+  float: right;
+}
+
+div.status {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  padding: 1em;
+  margin-bottom: 0.5em;
+}
