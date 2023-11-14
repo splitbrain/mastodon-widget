@@ -1,0 +1,22 @@
+name: Publish demo page
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          mkdir page
+          grep -vF '<script' src/index.html | \
+          sed -e 's/<!-- CDN -->/<script type="module" src="https:\/\/unpkg.com\/mastodon-widget"><\/script>/' \
+          > page/index.html
+      - uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: page
+          branch: gh-pages

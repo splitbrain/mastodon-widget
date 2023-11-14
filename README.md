@@ -11,13 +11,15 @@ When a user clicks the follow button, a dialog will ask for their instance (incl
 ```html
 <html>
   <head>
-    <script src="https://unpkg.com/mastodon-widget"></script>
+    <script type="module" src="https://unpkg.com/mastodon-widget"></script>
   </head>
   <body>
     <mastodon-widget account="splitbrain@octodon.social" limit="5"></mastodon-widget>
   </body>
 </html>
 ```
+
+You can see a demo of this widget at https://splitbrain.github.io/mastodon-widget/
 
 More info about the individual components can be found in their respective readme files:
 
@@ -61,6 +63,7 @@ For building a new release, run:
 
 ```bash
 npm version patch
+git push
 git push --tags
 ```
 

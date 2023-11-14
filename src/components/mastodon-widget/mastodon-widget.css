@@ -1,4 +1,6 @@
 :host {
+  display: block;
+
   /** @prop --color-background: background color of the widget */
   --color-background: #ccd7e0;
   /** @prop --color-text: text color used in the widget */
