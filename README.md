@@ -1,6 +1,5 @@
 # Mastodon Widget
 
-
 ## Todo
 
 - [ ] add readme
@@ -14,4 +13,3 @@
 - [x] let dialog return the instance for reusability for share widget
 - [ ] add share widget
 - [ ] figure out build/dist process
-

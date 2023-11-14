@@ -23,7 +23,8 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "pretty": "prettier . --write"
   },
   "dependencies": {
     "@stencil/core": "^4.7.0"
@@ -33,6 +34,7 @@
     "@types/node": "^16.18.11",
     "jest": "^29.7.0",
     "jest-cli": "^29.7.0",
+    "prettier": "3.1.0",
     "puppeteer": "21.1.1"
   },
   "license": "MIT"

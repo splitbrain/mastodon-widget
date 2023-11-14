@@ -1,4 +1,4 @@
-import {Component, h, Host, Method, Prop} from '@stencil/core';
+import { Component, h, Host, Method, Prop } from '@stencil/core';
 
 @Component({
   tag: 'mastodon-instancepicker',
@@ -6,38 +6,38 @@ import {Component, h, Host, Method, Prop} from '@stencil/core';
   shadow: true,
 })
 export class MastodonInstancepicker {
-
-
   dialog: HTMLDialogElement;
   input: HTMLInputElement;
   list: HTMLUListElement;
   abortController: AbortController;
-  instance: { resolve: (value: (PromiseLike<string> | string)) => void; reject: (reason?: any) => void };
+  instance: { resolve: (value: PromiseLike<string> | string) => void; reject: (reason?: any) => void };
 
   @Prop() account: string;
 
   render() {
     return (
       <Host>
-        <dialog ref={(el) => this.dialog = el} onClick={this.close.bind(this)}>
-          <main onClick={(event) => event.stopPropagation()}>
+        <dialog ref={el => (this.dialog = el)} onClick={this.close.bind(this)}>
+          <main onClick={event => event.stopPropagation()}>
             <h1>Pick your Instance</h1>
-            <p>
-              Enter the Mastodon instance your account is hosted at.
-            </p>
+            <p>Enter the Mastodon instance your account is hosted at.</p>
             <form onSubmit={this.submit.bind(this)}>
-              <input type="text" autofocus placeholder="Domain of your home server, e.g. mastodon.social"
-                     ref={(el) => this.input = el}
-                     onInput={this.updateSuggestions.bind(this)}
-                     onKeyDown={this.handleKeypress.bind(this)}
+              <input
+                type="text"
+                autofocus
+                placeholder="Domain of your home server, e.g. mastodon.social"
+                ref={el => (this.input = el)}
+                onInput={this.updateSuggestions.bind(this)}
+                onKeyDown={this.handleKeypress.bind(this)}
               />
               <button type="submit">Pick</button>
             </form>
-            <ul ref={(el) => this.list = el} onClick={this.markClicked.bind(this)}>
-            </ul>
+            <ul ref={el => (this.list = el)} onClick={this.markClicked.bind(this)}></ul>
             <p>
               Don't have a Mastodon account yet? Find a server at{' '}
-              <a href="https://joinmastodon.org/servers" target="_blank">joinmastodon.org</a>
+              <a href="https://joinmastodon.org/servers" target="_blank">
+                joinmastodon.org
+              </a>
             </p>
           </main>
         </dialog>
@@ -49,7 +49,7 @@ export class MastodonInstancepicker {
   async pickInstance() {
     this.dialog.showModal();
     return new Promise<string>((resolve, reject) => {
-      this.instance = {resolve, reject};
+      this.instance = { resolve, reject };
     });
   }
 
@@ -86,7 +86,7 @@ export class MastodonInstancepicker {
   }
 
   markClicked(event) {
-    if(event.target.tagName !== 'LI') return;
+    if (event.target.tagName !== 'LI') return;
     event.stopPropagation();
 
     const current = this.list.querySelector('li.selected');
@@ -139,7 +139,7 @@ export class MastodonInstancepicker {
 
     const apiurl = 'https://mastodon.social/api/v1/peers/search?q=';
     try {
-      const result = await fetch(apiurl + this.input.value, {signal: this.abortController.signal});
+      const result = await fetch(apiurl + this.input.value, { signal: this.abortController.signal });
       let json = await result.json();
 
       if (json === null) json = [];
@@ -149,13 +149,14 @@ export class MastodonInstancepicker {
         json.unshift('mastodon.social');
       }
 
-
       this.list.innerHTML = '';
-      json.forEach(function (instance) {
-        const li = document.createElement('li');
-        li.textContent = instance;
-        this.list.appendChild(li);
-      }.bind(this));
+      json.forEach(
+        function (instance) {
+          const li = document.createElement('li');
+          li.textContent = instance;
+          this.list.appendChild(li);
+        }.bind(this),
+      );
     } catch (err) {
       console.log(err);
     }

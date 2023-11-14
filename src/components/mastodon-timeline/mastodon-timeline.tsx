@@ -1,4 +1,4 @@
-import {Component, h, Host, Prop, State} from '@stencil/core';
+import { Component, h, Host, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'mastodon-timeline',
@@ -6,17 +6,12 @@ import {Component, h, Host, Prop, State} from '@stencil/core';
   shadow: true,
 })
 export class MastodonTimeline {
-
   @State() items: Array<any> = [];
   @Prop() account: string;
   @Prop() limit: number = 10;
 
   render() {
-    return (
-      <Host>
-        {this.getTimeline()}
-      </Host>
-    );
+    return <Host>{this.getTimeline()}</Host>;
   }
 
   async connectedCallback() {
@@ -26,14 +21,16 @@ export class MastodonTimeline {
   makeTimelineItem(item) {
     const div = document.createElement('div');
     div.innerHTML = item.html;
-    div.querySelectorAll('a').forEach((a) => {
+    div.querySelectorAll('a').forEach(a => {
       a.setAttribute('target', '_blank');
     });
 
     return (
       <div class="status">
         <div innerHTML={div.innerHTML}></div>
-        <a href={item.url} target="_blank" class="dt">{item.date.toLocaleString()}</a>
+        <a href={item.url} target="_blank" class="dt">
+          {item.date.toLocaleString()}
+        </a>
       </div>
     );
   }
@@ -59,6 +56,6 @@ export class MastodonTimeline {
       url: item.querySelector('link').textContent,
       date: new Date(item.querySelector('pubDate').textContent),
       html: item.querySelector('description').textContent,
-    }
+    };
   }
 }

@@ -1,4 +1,4 @@
-import {Component, Host, h, State, Prop} from '@stencil/core';
+import { Component, Host, h, State, Prop } from '@stencil/core';
 
 @Component({
   tag: 'mastodon-widget',
@@ -6,7 +6,6 @@ import {Component, Host, h, State, Prop} from '@stencil/core';
   shadow: true,
 })
 export class MastodonWidget {
-
   root: HTMLDivElement;
 
   @Prop() account: string;
@@ -26,12 +25,14 @@ export class MastodonWidget {
   render() {
     return (
       <Host>
-        <div class="root" ref={(el) => this.root = el}>
+        <div class="root" ref={el => (this.root = el)}>
           <main>
-            <img src={this.userdata.avatar} class="avatar" alt="Avatar"/>
+            <img src={this.userdata.avatar} class="avatar" alt="Avatar" />
             <div class="info">
               <div class="name">{this.userdata.display_name}</div>
-              <a href={this.userdata.url} class="acct" target="_blank">{this.userdata.acct}</a>
+              <a href={this.userdata.url} class="acct" target="_blank">
+                {this.userdata.acct}
+              </a>
               <div class="bio" innerHTML={this.userdata.note}></div>
             </div>
           </main>
@@ -53,9 +54,7 @@ export class MastodonWidget {
             </div>
           </div>
         </div>
-        {
-          this.limit ? <mastodon-timeline account={this.account} limit={this.limit}></mastodon-timeline> : ''
-        }
+        {this.limit ? <mastodon-timeline account={this.account} limit={this.limit}></mastodon-timeline> : ''}
       </Host>
     );
   }
@@ -87,5 +86,4 @@ export class MastodonWidget {
       // no instance picked
     }
   }
-
 }
