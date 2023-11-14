@@ -27,33 +27,33 @@ More info about the individual components can be found in their respective readm
 
 ## Development
 
-The widgets are web components built with the [StencilJS](https://stenciljs.com/) compiler. I'm using `yarn` for development.
+The widgets are web components built with the [StencilJS](https://stenciljs.com/) compiler.
 
 Setup dependencies:
 
 ```bash
-yarn
+npm install
 ```
 
 Start a development server:
 
 ```bash
-yarn start
+npm run start
 ```
 
 Build the components and update the readme files for production:
 
 ```bash
-yarn build
+npm run build
 ```
 
 Prettify the code:
 
 ```bash
-yarn pretty
+npm run pretty
 ```
 
-## NPM
+## NPM Package
 
 The project is published to npm as `mastodon-widget`. See the [npm page](https://www.npmjs.com/package/mastodon-widget) for more info.
 
