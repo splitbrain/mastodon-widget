@@ -155,7 +155,7 @@ export class MastodonInstancepicker {
       if (json === null) json = [];
 
       // api does not suggest itself
-      if (this.input.value.length && 'mastodon.social'.startsWith(this.input.value)) {
+      if (this.input.value.length && 'mastodon.social'.startsWith(this.input.value.toLowerCase())) {
         json.unshift('mastodon.social');
       }
 
