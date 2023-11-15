@@ -73,22 +73,4 @@ export class MastodonWidget {
     const response = await fetch(apiurl + this.account);
     return await response.json();
   }
-
-  async followAction() {
-    let dialog = this.root.querySelector('mastodon-instancepicker');
-    if (!dialog) {
-      dialog = document.createElement('mastodon-instancepicker');
-      //dialog.account = this.account;
-      this.root.appendChild(dialog);
-    }
-    try {
-      const instance = await dialog.pickInstance();
-
-      // FIXME the correct way is to use webfinger to find the appropriate endpoint and to use a acct uri
-      const url = `https://${instance}/authorize_interaction?uri=@${this.account}`;
-      window.open(url, '_blank');
-    } catch (err) {
-      // no instance picked
-    }
-  }
 }
