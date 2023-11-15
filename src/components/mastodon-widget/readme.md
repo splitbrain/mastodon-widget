@@ -2,7 +2,6 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Overview
 
 A widget to display a Mastodon account and its timeline.
@@ -13,7 +12,6 @@ A widget to display a Mastodon account and its timeline.
 | --------- | --------- | -------------------------------------------------------------- | -------- | ----------- |
 | `account` | `account` | The account to display in the form `user@example.com`          | `string` | `undefined` |
 | `limit`   | `limit`   | The number of toots to display. `0` for disabling the timeline | `number` | `10`        |
-
 
 ## CSS Custom Properties
 
@@ -26,22 +24,25 @@ A widget to display a Mastodon account and its timeline.
 | `--color-link`        | link color                                     |
 | `--color-text`        | text color used in the widget                  |
 
-
 ## Dependencies
 
 ### Depends on
 
+- [mastodon-follow](../mastodon-follow)
 - [mastodon-timeline](../mastodon-timeline)
 - [mastodon-instancepicker](../mastodon-instancepicker)
 
 ### Graph
+
 ```mermaid
 graph TD;
+  mastodon-widget --> mastodon-follow
   mastodon-widget --> mastodon-timeline
   mastodon-widget --> mastodon-instancepicker
+  mastodon-follow --> mastodon-instancepicker
   style mastodon-widget fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

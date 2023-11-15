@@ -24,6 +24,7 @@ You can see a demo of this widget at https://splitbrain.github.io/mastodon-widge
 More info about the individual components can be found in their respective readme files:
 
 - [mastodon-widget](src/components/mastodon-widget/readme.md) The main widget as shown above
+- [mastodon-follow](src/components/mastodon-follow/readme.md) Make any HTML a follow button
 - [mastodon-timeline](src/components/mastodon-timeline/readme.md) The timeline component
 - [mastodon-instancepicker](src/components/mastodon-instancepicker/readme.md) The instance picker dialog
 

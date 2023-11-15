@@ -64,7 +64,13 @@ export class MastodonInstancepicker {
    * Close the dialog without picking an instance.
    */
   @Method()
-  async close() {
+  async close(event: MouseEvent) {
+    if (event && event.target !== this.dialog) return;
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
     this.dialog.close();
     this.instance.reject();
   }

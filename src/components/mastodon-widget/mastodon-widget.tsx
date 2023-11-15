@@ -54,9 +54,9 @@ export class MastodonWidget {
               <span>Followers</span>
               <strong>{this.userdata.followers_count}</strong>
             </div>
-            <div class="button">
-              <button onClick={this.followAction.bind(this)}>Follow</button>
-            </div>
+            <mastodon-follow account={this.account} class="button">
+              <button>Follow</button>
+            </mastodon-follow>
           </div>
         </div>
         {this.limit ? <mastodon-timeline account={this.account} limit={this.limit}></mastodon-timeline> : ''}

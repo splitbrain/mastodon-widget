@@ -64,6 +64,7 @@ main a:hover {
   margin-top: 0.5em;
 }
 
+.meta > mastodon-follow,
 .meta > div {
   height: 2em;
   flex: 1;

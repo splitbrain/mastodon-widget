@@ -7,6 +7,15 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     /**
+     * A wrapper around any HTML which will capture clicks and execute a follow action instead.
+     */
+    interface MastodonFollow {
+        /**
+          * The account to follow in the form `user@example.com`
+         */
+        "account": string;
+    }
+    /**
      * A dialog widget to let a user pick their Mastodon instance.
      */
     interface MastodonInstancepicker {
@@ -17,7 +26,7 @@ export namespace Components {
         /**
           * Close the dialog without picking an instance.
          */
-        "close": () => Promise<void>;
+        "close": (event: MouseEvent) => Promise<void>;
         /**
           * Open the dialog and let the user pick an instance.
          */
@@ -53,6 +62,15 @@ export namespace Components {
 }
 declare global {
     /**
+     * A wrapper around any HTML which will capture clicks and execute a follow action instead.
+     */
+    interface HTMLMastodonFollowElement extends Components.MastodonFollow, HTMLStencilElement {
+    }
+    var HTMLMastodonFollowElement: {
+        prototype: HTMLMastodonFollowElement;
+        new (): HTMLMastodonFollowElement;
+    };
+    /**
      * A dialog widget to let a user pick their Mastodon instance.
      */
     interface HTMLMastodonInstancepickerElement extends Components.MastodonInstancepicker, HTMLStencilElement {
@@ -81,12 +99,22 @@ declare global {
         new (): HTMLMastodonWidgetElement;
     };
     interface HTMLElementTagNameMap {
+        "mastodon-follow": HTMLMastodonFollowElement;
         "mastodon-instancepicker": HTMLMastodonInstancepickerElement;
         "mastodon-timeline": HTMLMastodonTimelineElement;
         "mastodon-widget": HTMLMastodonWidgetElement;
     }
 }
 declare namespace LocalJSX {
+    /**
+     * A wrapper around any HTML which will capture clicks and execute a follow action instead.
+     */
+    interface MastodonFollow {
+        /**
+          * The account to follow in the form `user@example.com`
+         */
+        "account"?: string;
+    }
     /**
      * A dialog widget to let a user pick their Mastodon instance.
      */
@@ -124,6 +152,7 @@ declare namespace LocalJSX {
         "limit"?: number;
     }
     interface IntrinsicElements {
+        "mastodon-follow": MastodonFollow;
         "mastodon-instancepicker": MastodonInstancepicker;
         "mastodon-timeline": MastodonTimeline;
         "mastodon-widget": MastodonWidget;
@@ -133,6 +162,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            /**
+             * A wrapper around any HTML which will capture clicks and execute a follow action instead.
+             */
+            "mastodon-follow": LocalJSX.MastodonFollow & JSXBase.HTMLAttributes<HTMLMastodonFollowElement>;
             /**
              * A dialog widget to let a user pick their Mastodon instance.
              */
