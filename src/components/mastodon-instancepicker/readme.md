@@ -1,5 +1,11 @@
 # mastodon-instancepicker
 
+This component lets the user pick a Mastodon instance by typing. A list of matching instances is shown for selection by mouse or keyboard navigation.
+
+End users usually will not use this component directly, it is used internally by other components.
+
+Adding this component will add the dialog as closed. You can open it by calling the `pickInstance()` method, which will return a promise that resolves to the selected instance.
+
 <!-- Auto Generated Below -->
 
 ## Overview

@@ -1,5 +1,22 @@
 # mastodon-share
 
+You can use this to create a share button. The body of the component can be arbitrary HTML.
+
+When clicked, the component will open the [instancepicker](../mastodon-instancepicker/readme.md) component and then redirect to the selected instance with the share dialog open.
+
+```html
+
+<mastodon-share
+        account="splitbrain@octodon.social"
+        url="https://www.splitbrain.org"
+        text="Check out Andi's homepage!"
+>
+    <button>Share this on Mastodon</button
+</mastodon-share>
+```
+
+Note: the component will apply `pointer-events: none` to all top-level `a` elements to prevent the default click action. If you have a better idea on how to achieve this, please let me know.
+
 <!-- Auto Generated Below -->
 
 ## Overview

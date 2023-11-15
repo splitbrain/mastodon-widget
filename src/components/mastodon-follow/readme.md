@@ -2,6 +2,8 @@
 
 You can use this to progressively enhance any HTML element to become a follow button.
 
+When clicked, the component will open the [instancepicker](../mastodon-instancepicker/readme.md) component and then selected instance with the given account loaded for easy following.
+
 ```html
 <mastodon-follow account="splitbrain@octodon.social">
   <a href="https://octodon.social/@splitbrain">Follow me</a>

@@ -1,5 +1,13 @@
 # mastodon-timeline
 
+This component shows the most recent post of the given account. The number of shown posts can be configured.
+
+```html
+<mastodon-timeline account="splitbrain@octodon.social" limit="5"></mastodon-timeline>
+```
+
+The component fetches content via the RSS feed of the account. The maximum number of posts is limited to the number of posts in the feed, which is usually 20.
+
 <!-- Auto Generated Below -->
 
 ## Overview

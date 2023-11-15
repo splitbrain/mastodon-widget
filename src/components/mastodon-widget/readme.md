@@ -1,5 +1,13 @@
 # mastodon-widget
 
+This is the main component to display a Mastodon account's info and timeline. It features a prominent follow button.
+
+Clicking the follow button will open the [instancepicker](../mastodon-instancepicker/readme.md) component and then redirect to the selected instance with the follow dialog open. The timeline is displayed via the [mastodon-timeline](../mastodon-timeline/readme.md) component.
+
+```html
+<mastodon-widget account="splitbrain@octodon.social"></mastodon-widget>
+```
+
 <!-- Auto Generated Below -->
 
 ## Overview
