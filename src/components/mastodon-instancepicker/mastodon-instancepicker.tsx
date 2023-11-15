@@ -33,6 +33,7 @@ export class MastodonInstancepicker {
                 ref={el => (this.input = el)}
                 onInput={this.updateSuggestions.bind(this)}
                 onKeyDown={this.handleKeypress.bind(this)}
+                value={localStorage.getItem('mastodon-instance') || ''}
               />
               <button type="submit">Pick</button>
             </form>

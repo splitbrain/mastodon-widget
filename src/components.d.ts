@@ -33,6 +33,23 @@ export namespace Components {
         "pickInstance": () => Promise<string>;
     }
     /**
+     * A wrapper around any HTML which will share a page on the selected instance.
+     */
+    interface MastodonShare {
+        /**
+          * unused
+         */
+        "account": string;
+        /**
+          * The text to share. Defaults to the current page's title.
+         */
+        "text": string;
+        /**
+          * The URL to share. Defaults to the current page.
+         */
+        "url": string;
+    }
+    /**
      * A widget to display the timeline of a Mastodon account
      * This makes use of the RSS feed of the account.
      */
@@ -80,6 +97,15 @@ declare global {
         new (): HTMLMastodonInstancepickerElement;
     };
     /**
+     * A wrapper around any HTML which will share a page on the selected instance.
+     */
+    interface HTMLMastodonShareElement extends Components.MastodonShare, HTMLStencilElement {
+    }
+    var HTMLMastodonShareElement: {
+        prototype: HTMLMastodonShareElement;
+        new (): HTMLMastodonShareElement;
+    };
+    /**
      * A widget to display the timeline of a Mastodon account
      * This makes use of the RSS feed of the account.
      */
@@ -101,6 +127,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "mastodon-follow": HTMLMastodonFollowElement;
         "mastodon-instancepicker": HTMLMastodonInstancepickerElement;
+        "mastodon-share": HTMLMastodonShareElement;
         "mastodon-timeline": HTMLMastodonTimelineElement;
         "mastodon-widget": HTMLMastodonWidgetElement;
     }
@@ -123,6 +150,23 @@ declare namespace LocalJSX {
           * currently unused
          */
         "account"?: string;
+    }
+    /**
+     * A wrapper around any HTML which will share a page on the selected instance.
+     */
+    interface MastodonShare {
+        /**
+          * unused
+         */
+        "account"?: string;
+        /**
+          * The text to share. Defaults to the current page's title.
+         */
+        "text"?: string;
+        /**
+          * The URL to share. Defaults to the current page.
+         */
+        "url"?: string;
     }
     /**
      * A widget to display the timeline of a Mastodon account
@@ -154,6 +198,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "mastodon-follow": MastodonFollow;
         "mastodon-instancepicker": MastodonInstancepicker;
+        "mastodon-share": MastodonShare;
         "mastodon-timeline": MastodonTimeline;
         "mastodon-widget": MastodonWidget;
     }
@@ -170,6 +215,10 @@ declare module "@stencil/core" {
              * A dialog widget to let a user pick their Mastodon instance.
              */
             "mastodon-instancepicker": LocalJSX.MastodonInstancepicker & JSXBase.HTMLAttributes<HTMLMastodonInstancepickerElement>;
+            /**
+             * A wrapper around any HTML which will share a page on the selected instance.
+             */
+            "mastodon-share": LocalJSX.MastodonShare & JSXBase.HTMLAttributes<HTMLMastodonShareElement>;
             /**
              * A widget to display the timeline of a Mastodon account
              * This makes use of the RSS feed of the account.

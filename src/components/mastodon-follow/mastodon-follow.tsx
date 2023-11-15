@@ -39,6 +39,4 @@ export class MastodonFollow {
     }
     this.root.removeChild(dialog);
   }
-
-
 }

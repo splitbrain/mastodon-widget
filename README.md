@@ -25,6 +25,7 @@ More info about the individual components can be found in their respective readm
 
 - [mastodon-widget](src/components/mastodon-widget/readme.md) The main widget as shown above
 - [mastodon-follow](src/components/mastodon-follow/readme.md) Make any HTML a follow button
+- [mastodon-share](src/components/mastodon-share/readme.md) Make any HTML a share button
 - [mastodon-timeline](src/components/mastodon-timeline/readme.md) The timeline component
 - [mastodon-instancepicker](src/components/mastodon-instancepicker/readme.md) The instance picker dialog
 

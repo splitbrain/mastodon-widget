@@ -4,7 +4,7 @@ You can use this to progressively enhance any HTML element to become a follow bu
 
 ```html
 <mastodon-follow account="splitbrain@octodon.social">
-    <a href="https://octodon.social/@splitbrain">Follow me</a>
+  <a href="https://octodon.social/@splitbrain">Follow me</a>
 </mastodon-follow>
 ```
 

@@ -1,0 +1,8 @@
+:host {
+  display: inline-block;
+  cursor: pointer;
+}
+
+::slotted(a) {
+  pointer-events: none;
+}
