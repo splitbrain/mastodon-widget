@@ -1,6 +1,6 @@
 {
   "name": "mastodon-widget",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Mastodon Widgets as Web Components",
   "author": {
     "name": "Andreas Gohr",
