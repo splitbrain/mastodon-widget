@@ -38,7 +38,6 @@ A widget to display a Mastodon account and its timeline.
 
 - [mastodon-follow](../mastodon-follow)
 - [mastodon-timeline](../mastodon-timeline)
-- [mastodon-instancepicker](../mastodon-instancepicker)
 
 ### Graph
 
@@ -46,7 +45,6 @@ A widget to display a Mastodon account and its timeline.
 graph TD;
   mastodon-widget --> mastodon-follow
   mastodon-widget --> mastodon-timeline
-  mastodon-widget --> mastodon-instancepicker
   mastodon-follow --> mastodon-instancepicker
   style mastodon-widget fill:#f9f,stroke:#333,stroke-width:4px
 ```

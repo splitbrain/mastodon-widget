@@ -53,7 +53,6 @@ Type: `Promise<string>`
 
 - [mastodon-follow](../mastodon-follow)
 - [mastodon-share](../mastodon-share)
-- [mastodon-widget](../mastodon-widget)
 
 ### Graph
 
@@ -61,7 +60,6 @@ Type: `Promise<string>`
 graph TD;
   mastodon-follow --> mastodon-instancepicker
   mastodon-share --> mastodon-instancepicker
-  mastodon-widget --> mastodon-instancepicker
   style mastodon-instancepicker fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
